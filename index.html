@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yutong Jiao | Job Portfolio</title>
+  <meta name="description" content="Job portfolio of Yutong Jiao – business analysis, market research, strategy & operations, and international business support." />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --accent-2: #0f172a;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 20px;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fbff 0%, #f7f8fb 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(247, 248, 251, 0.78);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      padding: 72px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.12), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.05;
+      margin: 0 0 16px;
+      color: var(--accent-2);
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 60ch;
+      margin-bottom: 24px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      font-weight: 600;
+      transition: 0.2s ease;
+      background: #fff;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      background: #fcfcfd;
+    }
+
+    .hero-side {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: space-between;
+    }
+
+    .stat {
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .stat-value {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    section {
+      padding: 18px 0 0;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin: 0 0 16px;
+      color: var(--accent-2);
+    }
+
+    .section-note {
+      color: var(--muted);
+      margin: 0 0 18px;
+      max-width: 70ch;
+    }
+
+    .about {
+      padding: 28px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+
+    .list li { margin-bottom: 10px; }
+
+    .skill-grid, .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .skill-card, .project-card, .timeline-item, .contact-card {
+      padding: 22px;
+    }
+
+    .small-title {
+      font-size: 18px;
+      margin: 0 0 8px;
+      color: var(--accent-2);
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-role {
+      font-weight: 700;
+    }
+
+    .timeline-company {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .timeline-date {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .project-card p,
+    .timeline-item p,
+    .contact-card p,
+    .about p {
+      margin: 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 20px 0 50px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .grid-2,
+      .skill-grid,
+      .project-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-top {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-main,
+      .hero-side,
+      .about,
+      .skill-card,
+      .project-card,
+      .timeline-item,
+      .contact-card {
+        padding: 20px;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Yutong Jiao</a>
+      <div class="nav-links">
+        <a href="#about">Profile</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="eyebrow">Job Portfolio</div>
+          <h1>Business Analysis, Market Research, and Strategy &amp; Operations Portfolio</h1>
+          <p class="subtitle">
+            I am Yutong Jiao, a Master of Public Policy student at HKUST with a cross-disciplinary background in economics, public policy, research, business support, and communications. I am currently seeking full-time opportunities in business analysis, market research, strategy &amp; operations, international business support, and related roles.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="mailto:catherine_jyt@163.com">Contact Me</a>
+            <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+            <a class="btn" href="#projects">View Portfolio</a>
+          </div>
+          <div class="meta">
+            <span class="pill">Qingdao / Hong Kong / Shenzhen</span>
+            <span class="pill">Available for 2026 Full-time Roles</span>
+            <span class="pill">Applied Economics + Public Policy</span>
+            <span class="pill">Open to Full-time Roles</span>
+            <span class="pill">English / Chinese</span>
+          </div>
+        </div>
+
+        <aside class="card hero-side">
+          <div class="stat">
+            <div class="stat-label">Current Study</div>
+            <div class="stat-value">HKUST MPP</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Target Roles</div>
+            <div class="stat-value">Business Analysis · Market Research · Strategy &amp; Ops</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Strengths</div>
+            <div class="stat-value">Structured thinking · Clear communication · Reliable execution</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">Profile</h2>
+      <div class="card about">
+        <div class="grid-2">
+          <div>
+            <p>My background combines economics, public policy, industry research, business support, communications, and project coordination. I am particularly interested in roles where structured thinking, market understanding, and execution support come together to solve real business problems.</p>
+          </div>
+          <div>
+            <ul class="list">
+              <li>Master of Public Policy, The Hong Kong University of Science and Technology</li>
+              <li>Bachelor of Applied Economics, BNU-HKBU United International College</li>
+              <li>Native Chinese speaker with strong English communication and writing ability</li>
+              <li>Interested in long-term development in business analysis, market research, and operations-related roles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h2 class="section-title">Selected Achievements</h2>
+      <p class="section-note">A few results that reflect my strengths in analysis, coordination, communications, and project support.</p>
+      <div class="skill-grid">
+        <div class="card skill-card">
+          <h3 class="small-title">Healthcare Incubation Support</h3>
+          <p class="muted">Supported benchmark analysis, client follow-up, and service structuring for a healthcare incubation center tied to a RMB 3.52 million investment attraction and promotion budget.</p>
+        </div>
+        <div class="card skill-card">
+          <h3 class="small-title">Research Output &amp; Reporting</h3>
+          <p class="muted">Supported industry and company research at Huaxi Securities, with reports reaching a 90% adoption rate in initial investment opinion support work.</p>
+        </div>
+        <div class="card skill-card">
+          <h3 class="small-title">Student Outreach Growth</h3>
+          <p class="muted">Generated 10,000+ organic views and improved engagement by 25% through WeChat and Douyin campaign support for school events and admissions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Core Skills</h2>
+      <p class="section-note">A cross-functional toolkit built through business support, research, communications, and market-facing projects.</p>
+      <div class="skill-grid">
+        <div class="card skill-card">
+          <h3 class="small-title">Business &amp; Market Analysis</h3>
+          <p class="muted">Competitor analysis, customer profiling, market research, policy scan, business case support, ROI-oriented thinking.</p>
+        </div>
+        <div class="card skill-card">
+          <h3 class="small-title">Project &amp; Operations Support</h3>
+          <p class="muted">Project coordination, stakeholder support, information structuring, meeting documentation, workflow and SOP organization.</p>
+        </div>
+        <div class="card skill-card">
+          <h3 class="small-title">Communication &amp; Tools</h3>
+          <p class="muted">Bilingual writing, presentation support, WeChat/Douyin content operations, Excel, Python, Stata, Tableau, SQL, Wind, Bloomberg.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <div class="timeline-role">Business Operations Intern</div>
+              <div class="timeline-company">Nanyue Group · Shenzhen</div>
+            </div>
+            <div class="timeline-date">Sep 2025 – Present</div>
+          </div>
+          <p class="muted">Supported the early-stage operations of a healthcare incubation center through benchmark analysis, compliance research, customer follow-up, and service model structuring.</p>
+        </div>
+
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <div class="timeline-role">Industry Research Assistant</div>
+              <div class="timeline-company">Huaxi Securities Research Institute · Beijing</div>
+            </div>
+            <div class="timeline-date">Jun 2023 – Aug 2023</div>
+          </div>
+          <p class="muted">Supported sector and company research in the textile and apparel industry, including database maintenance, driver analysis, and report support.</p>
+        </div>
+
+        <div class="card timeline-item">
+          <div class="timeline-top">
+            <div>
+              <div class="timeline-role">Communications &amp; New Media Operations Assistant</div>
+              <div class="timeline-company">BNBU School of Business Management · Zhuhai</div>
+            </div>
+            <div class="timeline-date">Jan 2024 – Jun 2024</div>
+          </div>
+          <p class="muted">Supported student outreach through WeChat and Douyin, content planning, campaign execution, and engagement analysis for school events and admissions activities.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Selected Projects &amp; Case Work</h2>
+      <p class="section-note">Representative work samples that show how I approach business-facing analysis, operations support, research, and communications.</p>
+      <div class="project-grid">
+        <div class="card project-card">
+          <h3 class="small-title"><a href="ev-market-analysis.html">EV Market Analysis &amp; Marketing Support</a></h3>
+          <p class="muted">Conducted competitor analysis across 8+ products, synthesized 300+ pieces of user feedback and test-drive records, and supported message optimization for product positioning and conversion preparation.</p>
+          <p class="muted" style="margin-top:10px;"><strong>Focus:</strong> competitor analysis, user insight, message optimization, conversion support.</p>
+        </div>
+
+        <div class="card project-card">
+          <h3 class="small-title"><a href="green-ai-research.html">Green AI Policy Research</a></h3>
+          <p class="muted">Researched the carbon footprint of AI models and data centers using international policy comparison and ESG data, covering issues such as model training emissions, inference energy use, and green governance tools.</p>
+          <p class="muted" style="margin-top:10px;"><strong>Focus:</strong> AI for policy, ESG research, international comparison, sustainability governance.</p>
+        </div>
+
+        <div class="card project-card">
+          <h3 class="small-title">Learning App WAU Diagnosis Case</h3>
+          <p class="muted">Built a diagnostic framework for low weekly active users by breaking the problem into acquisition, activation, retention, and usage frequency, then proposed targeted optimization priorities.</p>
+          <p class="muted" style="margin-top:10px;"><strong>Focus:</strong> funnel diagnosis, user segmentation, product/operations optimization.</p>
+        </div>
+
+        <div class="card project-card">
+          <h3 class="small-title"><a href="healthcare-incubation.html">Healthcare Incubation Center Business Support</a></h3>
+          <p class="muted">Supported pre-launch operations of a healthcare incubation center through benchmark analysis, Macau policy research, client follow-up for 8 prospects, and service model structuring tied to a RMB 3.52 million promotion budget.</p>
+          <p class="muted" style="margin-top:10px;"><strong>Focus:</strong> business operations, policy scan, client follow-up, service structuring.</p>
+        </div>
+
+        <div class="card project-card">
+          <h3 class="small-title">Student Outreach &amp; Campaign Operations</h3>
+          <p class="muted">Supported WeChat and Douyin campaign operations for school activities and admissions, producing 5+ content pieces, generating 10,000+ organic views, and improving engagement by 25%.</p>
+          <p class="muted" style="margin-top:10px;"><strong>Focus:</strong> content operations, campaign support, audience engagement, result tracking.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume-note">
+      <h2 class="section-title">Portfolio Notes</h2>
+      <div class="card about">
+        <div class="grid-2">
+          <div>
+            <p>This page is designed as a lightweight job portfolio for applications. It can be shared as a GitHub Pages link together with my resume when applying for business analysis, market research, strategy &amp; operations, and international business support roles.</p>
+          </div>
+          <div>
+            <ul class="list">
+              <li>Add <code>resume.pdf</code> to the same repository to activate the resume download button.</li>
+              <li>This portfolio can be extended with dedicated project detail pages if needed.</li>
+              <li>Writing samples, case work, and additional materials are available upon request.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <div class="card contact-card">
+          <h3 class="small-title">Get in Touch</h3>
+          <p class="muted">Email: catherine_jyt@163.com</p>
+          <p class="muted">Phone: +86 155 5320 5867</p>
+        </div>
+        <div class="card contact-card">
+          <h3 class="small-title">Quick Note</h3>
+          <p class="muted">I am open to full-time opportunities in business analysis, market research, strategy &amp; operations, international business support, and related roles. Resume and additional writing samples can be shared upon request.</p>
+          <p class="muted" style="margin-top:10px;">Suggested GitHub Pages structure: keep this file as <code>index.html</code> and place your PDF resume in the same repository as <code>resume.pdf</code>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Yutong Jiao. Built as a job portfolio for GitHub Pages.</div>
+  </footer>
+</body>
+</html>
